@@ -1,3 +1,19 @@
+import { artistEl, imgCover, player, progress, time, titleEl } from "../renderer.js";
+import { getCurrent, setCurrent } from "./currentTrack.js";
+import { mostrarMetadata } from "./mostrarDatos.js";
+import { tiempos } from "./tiempos.js";
+
 export const loadData = async () => {
-  return await window.electronAPI.getMetaData();
+  const path = getCurrent()  
+
+  const data = await window.electronAPI.getMetaData(path.path)
+  setCurrent({metadata: data})
+
+  console.log(data);
+  
+  mostrarMetadata(titleEl, artistEl, imgCover)
+
+  tiempos(player, progress, time)
+  
+  return data;
 };

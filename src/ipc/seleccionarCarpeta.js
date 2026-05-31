@@ -32,8 +32,6 @@ function carpetaALista() {
   });
 }
 
-// `${carpeta}/${archivo}`
-
 function devolverLista() {
   ipcMain.handle("devolver-lista", async () => {
     return lista;

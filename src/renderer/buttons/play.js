@@ -1,3 +1,5 @@
+import { setCurrent } from "../currentTrack.js";
+import { loadData } from "../getData.js";
 import { nextIndex, resetIndex, indexCurrent } from "../indexCurrent.js";
 import { getPlayList } from "../leerStorage.js";
 import { setTruck } from "../setTrack.js";
@@ -40,7 +42,11 @@ export const play = (playBtn, player) => {
       resetIndex();
     }
 
-    player.src = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
+    const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`
+
+    player.src = currentPlay;
+    setCurrent({ path: currentPlay })
+    loadData()
     player.play();
   });
 };

@@ -1,8 +1,8 @@
 const { contextBridge, ipcRenderer } = require("electron");
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  getMetaData: () => {
-    return ipcRenderer.invoke("get-metadata");
+  getMetaData: (path) => {
+    return ipcRenderer.invoke("get-metadata", path);
   },
   closeApp: () => {
     ipcRenderer.send("close-app");
@@ -15,5 +15,5 @@ contextBridge.exposeInMainWorld("electronAPI", {
   },
   devolverLista: () => {
     return ipcRenderer.invoke("devolver-lista")
-  }
+  },
 });

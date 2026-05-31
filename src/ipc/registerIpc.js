@@ -4,14 +4,18 @@ const path = require("path");
 const fs = require("fs");
 const os = require("os");
 
-const songPath = path.join(
-  __dirname,
-  "../music",
-  "02 Queen - A Kind of Magic.mp3",
-);
-
 function registerIpc() {
-  ipcMain.handle("get-metadata", async () => {
+  ipcMain.handle("get-metadata", async (_, songPath) => {
+
+    if (!songPath) {
+  return {
+    title: "",
+    artist: "",
+    duration: "00:00",
+    cover: ""
+  };
+}
+
     const metadata = await mm.parseFile(songPath);
 
     const picture = metadata.common.picture?.[0];
@@ -30,12 +34,13 @@ function registerIpc() {
 
     const minutos = Math.floor(segundos / 60);
     const restoSegundos = Math.floor(segundos % 60);
+    
 
     return {
-      title: metadata.common.title,
-      artist: metadata.common.artist,
-      duration: `${minutos.toString().padStart(2, "0")}:${restoSegundos.toString().padStart(2, "0")}`,
-      cover,
+      title: metadata.common.title || '',
+      artist: metadata.common.artist || '',
+      duration: `${minutos.toString().padStart(2, "0")}:${restoSegundos.toString().padStart(2, "0")}` || '00.00,',
+      cover: cover ,
     };
   });
 }

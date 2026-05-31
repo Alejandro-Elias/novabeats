@@ -1,11 +1,18 @@
-export const setTruck = (player, playList, indexCurrrent) => {
+import { setCurrent } from "./currentTrack.js";
+import { loadData } from "./getData.js";
+
+export const setTruck = async (player, playList, indexCurrrent) => {
   if (!playList.length) {
     player.src = "";
     return;
   }
 
+  const path = `${playList[indexCurrrent].carpeta}/${playList[indexCurrrent].archivo}`  
+
+  setCurrent({ path: path})
+
+  loadData()
+
   player.src =
-    playList.length > 0
-      ? `${playList[indexCurrrent].carpeta}/${playList[indexCurrrent].archivo}`
-      : "";
+    playList.length > 0 ? path : "";
 };

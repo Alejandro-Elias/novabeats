@@ -1,6 +1,14 @@
-let fullTime = "";
+import { getCurrent } from "./currentTrack.js";
 
-export const tiempos = (player, progress, time, fullTime) => {
+export const tiempos = (player, progress, time) => {
+
+let metadatos = getCurrent()
+
+console.log(metadatos);
+
+
+let fullTime = metadatos.metadata.duration ;
+
   player.addEventListener("timeupdate", () => {
     
     const duration = player.duration;
