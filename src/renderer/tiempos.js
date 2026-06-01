@@ -4,9 +4,6 @@ export const tiempos = (player, progress, time) => {
 
 let metadatos = getCurrent()
 
-console.log(metadatos);
-
-
 let fullTime = metadatos.metadata.duration ;
 
   player.addEventListener("timeupdate", () => {

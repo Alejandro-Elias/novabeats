@@ -9,16 +9,16 @@
     <link rel="icon" href="../build/icon.png">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
-    <title>MusicTop</title>
+    <title>NovaBets</title>
 </head>
 
 <body>
     <div class="barra-cerrar">
-        <div class="container-button-main">
-            <h3 id="minimizar" class="minimizar">-</h3>
+        <div class="container-button-main ">
+            <button id="minimizar" class="minimizar yellow">-</button>
         </div>
-        <div class="container-button-main">
-            <h3 id="cerrar" class="cerrar">x</h3>
+        <div class="container-button-main ">
+            <button id="cerrar" class="cerrar red">x</button>
         </div>
     </div>
     <div class="reproductor">
@@ -47,6 +47,7 @@
                 </div>
                 <div class="control-principal">
                     <audio id="player"></audio>
+                    <button id="previousBtn" ><i class="fa-solid fa-circle-arrow-left buttons"></i></button>
                     <button id="stopBtn"><i class="fa-solid fa-circle-stop buttons"></i></button>
                     <button id="playBtn"><i class="fa-solid fa-circle-play play"></i></button>
                     <button id="nextBtn" ><i class="fa-solid fa-circle-arrow-right buttons"></i></button>
@@ -55,11 +56,13 @@
                 </div>
             </div>
             <div class="miselanios">
-                <button id="idFolderBtn" class="isFolderBtn"> Elije carpeta</button>
-                <div>
+                <div class="listBtn" >
+                    <button id="idFolderBtn" class="isFolderBtn"> Elije carpeta</button>
+                </div>
+                <div class="playListContent" >
                     <p>Lista de reproduccion</p>
-                    <div>
-                        <ol id="listaReproduccion" ></ol>
+                    <div class="playList" >
+                        <ul id="listaReproduccion" ></ul>
                     </div>
                 </div>
             </div>

@@ -1,10 +1,11 @@
-import { resetIndex } from "../indexCurrent.js";
+import { indexCurrent, resetIndex } from "../indexCurrent.js";
 
 
 export const stop = (stopBtn, player) => {
   stopBtn.addEventListener("click", () => {
     player.pause();
-    resetIndex
+    resetIndex()    
+    player.load()
     playBtn.innerHTML = '<i class="fa-solid fa-circle-play play"></i>';
   });
 };

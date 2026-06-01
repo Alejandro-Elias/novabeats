@@ -3,8 +3,7 @@ import { getCurrent } from "./currentTrack.js";
 
 
 export const mostrarMetadata = (titleEl, artistEl, imgCover) => {
-  const metadatos = getCurrent()  
-  
+  const metadatos = getCurrent()      
 
   titleEl.textContent = metadatos.metadata.title || "NovaBets";
   artistEl.textContent = metadatos.metadata.artist || "Music Player";

@@ -23,8 +23,6 @@ export const play = (playBtn, player) => {
   playBtn.addEventListener("click", () => {
     loadList();
 
-  console.log(playList);
-
     if (!playList || playList.length === 0) {
       alert("debe seleccionar una carpeta primero");
       return;

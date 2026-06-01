@@ -8,8 +8,6 @@ export const loadData = async () => {
 
   const data = await window.electronAPI.getMetaData(path.path)
   setCurrent({metadata: data})
-
-  console.log(data);
   
   mostrarMetadata(titleEl, artistEl, imgCover)
 
