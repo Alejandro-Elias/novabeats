@@ -1,3 +1,4 @@
+import { selectFolder, listaReproduccion, player } from "../renderer.js";
 import { play } from "./buttons/play.js";
 import { cargarLista } from "./cargarLista.js";
 import { setCurrent } from "./currentTrack.js";
@@ -5,7 +6,7 @@ import { loadData } from "./getData.js";
 import { resetIndex, indexCurrent } from "./indexCurrent.js";
 import { getPlayList } from "./leerStorage.js";
 
-export const folder = (selectFolder, listaReproduccion, player) => {
+export const folder = () => {
   selectFolder.addEventListener("click", async () => {
   localStorage.removeItem("playList");
     await window.electronAPI.carpetaALista();

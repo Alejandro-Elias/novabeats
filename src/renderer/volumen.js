@@ -1,4 +1,6 @@
-export const cambiarVolumen = (player, volumen, volumenText) => {
+import { player, volumen, volumenText } from "../renderer.js";
+
+export const cambiarVolumen = () => {
   volumen.addEventListener("input", () => {
     player.volume = volumen.value;
     const cantidadVolumen = Math.floor(volumen.value * 100);

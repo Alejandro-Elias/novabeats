@@ -1,20 +1,10 @@
-import { nextBtn, previousBtn } from "../../renderer.js";
-import { cargarLista } from "../cargarLista.js";
-import { setCurrent } from "../currentTrack.js";
-import { loadData } from "../getData.js";
-import {
-  nextIndex,
-  resetIndex,
-  indexCurrent,
-} from "../indexCurrent.js";
-import { getPlayList } from "../leerStorage.js";
+import { playBtn, player } from "../../renderer.js";
+import { indexCurrent } from "../indexCurrent.js";
 import { updateActiveTrack } from "../resaltarTrack.js";
 import { setTruck } from "../setTrack.js";
 import { loadList, playList } from "./play/loadList.js";
 
-export const play = (playBtn, player) => {
-
-  
+export const play = () => {  
 
   loadList();
 

@@ -1,5 +1,7 @@
-export const minimizarBtn = (propMinimizar) => {
-  propMinimizar.addEventListener("click", () => {
+import { minimizar } from "../../renderer.js";
+
+export const minimizarBtn = () => {
+  minimizar.addEventListener("click", () => {
     window.electronAPI.minimizar();
   });
 };

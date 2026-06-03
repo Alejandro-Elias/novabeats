@@ -1,7 +1,8 @@
+import { player, stopBtn } from "../../renderer.js";
 import { indexCurrent, resetIndex } from "../indexCurrent.js";
 
 
-export const stop = (stopBtn, player) => {
+export const stop = () => {
   stopBtn.addEventListener("click", () => {
     player.pause();
     resetIndex()    

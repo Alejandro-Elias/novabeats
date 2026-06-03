@@ -28,15 +28,15 @@ import { previousTrack } from "./renderer/buttons/play/previous.js";
   export const previousBtn = document.getElementById("previousBtn");
   
 
-  const list = [];
+  export const list = [];
 
-  cargarLista(listaReproduccion, list);
-  mostrarMetadata(titleEl, artistEl, imgCover);
-  cerrarBtn(cerrar, player);
-  minimizarBtn(minimizar);
-  stop(stopBtn, player);
-  cambiarVolumen(player, volumen, volumenText);
-  folder(selectFolder, listaReproduccion, player);
-  play(playBtn, player, nextBtn);
+  cargarLista();
+  mostrarMetadata();
+  cerrarBtn();
+  minimizarBtn();
+  stop();
+  cambiarVolumen();
+  folder();
+  play();
   nextTrack()
   previousTrack()

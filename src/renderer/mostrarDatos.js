@@ -1,6 +1,7 @@
+import { artistEl, imgCover, titleEl } from "../renderer.js";
 import { getCurrent } from "./currentTrack.js";
 
-export const mostrarMetadata = (titleEl, artistEl, imgCover) => {
+export const mostrarMetadata = () => {
   const metadatos = getCurrent()   
 
   document.title = `${metadatos.metadata.artist} - ${metadatos.metadata.title}`
