@@ -5,9 +5,7 @@ import { loadData } from "../getData.js";
 import { indexCurrent } from "../indexCurrent.js";
 import { updateActiveTrack } from "../resaltarTrack.js";
 import { setTrack } from "../setTrack.js";
-import { loadList } from "./play/loadList.js";
-
-const playList = getStorage("playList")
+import { loadList, playList } from "./play/loadList.js";
 
 export const ejecutarPlay = async () => {
 

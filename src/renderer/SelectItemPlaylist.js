@@ -8,7 +8,7 @@ export const selectPLayList = () => {
 
     if (!button) return;
 
-    const index = Number(button.dataset.index);
+    const index = Number(button.dataset.index);    
 
     setindexCurrent(index);
 

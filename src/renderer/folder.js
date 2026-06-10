@@ -22,13 +22,26 @@ export const folder = () => {
     if (playList.length > 0) {
       removeItemStorage("playList")
 
-      setStorage("playList", playList)
+      let playListNormal = []
+
+      playList.forEach((track, index) => {
+        const song = {
+          id: index,
+          track: track
+        }
+        playListNormal.push(song)        
+      });
+      
+      console.log(playListNormal);
+
+
+      setStorage("playList", playListNormal)
 
       mostrarLista();
 
       resetIndex();
 
-      const path = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
+      const path = `${playList[indexCurrent].song.carpeta}/${playList[indexCurrent].song.archivo}`;
 
       setCurrent({ path: path });
 

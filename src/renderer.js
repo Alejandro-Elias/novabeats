@@ -11,6 +11,7 @@ import { previousTrack } from "./renderer/buttons/play/previous.js";
 import { repeat } from "./renderer/repeat.js";
 import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
 import { mostrarLista } from "./renderer/mostrarLista.js";
+import { loadList } from "./renderer/buttons/play/loadList.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -45,3 +46,4 @@ import { mostrarLista } from "./renderer/mostrarLista.js";
   previousTrack()
   repeat()
   selectPLayList()
+  loadList()
