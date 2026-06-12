@@ -12,6 +12,7 @@ import { repeat } from "./renderer/repeat.js";
 import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
 import { mostrarLista } from "./renderer/mostrarLista.js";
 import { loadList } from "./renderer/buttons/play/loadList.js";
+import { files } from "./renderer/files.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -25,7 +26,8 @@ import { loadList } from "./renderer/buttons/play/loadList.js";
   export const cerrar = document.getElementById("cerrar");
   export const imgCover = document.getElementById("cover");
   export const volumenText = document.getElementById("volumen-texto");
-  export const selectFolder = document.getElementById("idFolderBtn");
+  export const selectFolder = document.getElementById("isFolderBtn");
+  export const selectFiles = document.getElementById("isFileBtn");
   export const listaReproduccion = document.getElementById("listaReproduccion");
   export const nextBtn = document.getElementById("nextBtn");
   export const previousBtn = document.getElementById("previousBtn");
@@ -43,6 +45,7 @@ import { loadList } from "./renderer/buttons/play/loadList.js";
   stop();
   cambiarVolumen();
   folder();
+  files()
   play();
   nextTrack()
   previousTrack()

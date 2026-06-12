@@ -16,7 +16,7 @@ function carpetaALista() {
       return [];
     }
 
-    lista = [];
+    lista = []
 
     const carpeta = resultado.filePaths[0];
 
@@ -32,7 +32,7 @@ function carpetaALista() {
           leerCarpeta(rutaCompleta);
         }
 
-        if (elemento.isFile() && elemento.name.endsWith(".mp3")) {
+        if (elemento.isFile() && elemento.name.endsWith(".mp3") || elemento.name.endsWith(".flac")) {
           lista.push({
             carpeta: pathCarpeta,
             archivo: elemento.name,

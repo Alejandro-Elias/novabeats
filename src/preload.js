@@ -13,6 +13,12 @@ contextBridge.exposeInMainWorld("electronAPI", {
   carpetaALista: () => {
     return ipcRenderer.invoke("seleccionar-carpeta");
   },
+  archivoALista: () => {
+    return ipcRenderer.invoke("seleccionar-archivos");
+  },
+  devolverArchivos: () => {
+    return ipcRenderer.invoke("devolver-archivos");
+  },
   devolverLista: () => {
     return ipcRenderer.invoke("devolver-lista")
   },
