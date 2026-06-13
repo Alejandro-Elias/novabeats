@@ -1,4 +1,5 @@
 let current = {
+  id: 0,
   path: null,
   metadata: {
     title: "",

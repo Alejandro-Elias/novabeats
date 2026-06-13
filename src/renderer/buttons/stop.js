@@ -1,12 +1,20 @@
-import { player, stopBtn } from "../../renderer.js";
+import { player, progress, stopBtn } from "../../renderer.js";
 import { indexCurrent, resetIndex } from "../indexCurrent.js";
-
+import { updateActiveTrack } from "../resaltarTrack.js";
+import { setTrack } from "../setTrack.js";
+import { playList } from "./play/loadList.js";
 
 export const stop = () => {
   stopBtn.addEventListener("click", () => {
     player.pause();
-    resetIndex()    
-    player.load()
+    resetIndex();
+    localStorage.setItem("indexCurrent", 0);
+    setTrack(player, playList, 0);
+    updateActiveTrack()
     playBtn.innerHTML = '<i class="fa-solid fa-circle-play play"></i>';
+    setTimeout(() => {
+      progress.max = 100;
+      progress.value = 0;
+    }, 5);
   });
 };

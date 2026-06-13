@@ -54,6 +54,11 @@
 .eliminarBtn {
     color: whitesmoke;
     background: transparent;
+    color: rgb(80, 80, 80);
+}
+
+.eliminarBtn:hover {
+    color: whitesmoke;
 }
 
 .isFolderBtn {

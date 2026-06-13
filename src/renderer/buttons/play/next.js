@@ -13,6 +13,7 @@ import { ejecutarPlay, playSelectItem } from "../play.js";
 import { playList } from "./loadList.js";
 
 let repeatCondition = "repeat-normal";
+let indiceActualizado = indexCurrent;
 
 export const setRepeatCondition = (condition) => {
   repeatCondition = condition;
@@ -20,31 +21,55 @@ export const setRepeatCondition = (condition) => {
 
 export const nextTrack = () => {
   const next = () => {
+    console.log(repeatCondition);
+
+    const enPlay = !player.paused;
     const listaNueva = getStorage("listaNueva");
     if (listaNueva) {
       resetIndex();
+      setStorage("indexCurrent", 0)
       setStorage("listaNueva", false);
       updateActiveTrack();
+      if (enPlay) {
+        indiceActualizado = getStorage("indexCurrent")
+        setTrack(player, playList, indiceActualizado)
+        ejecutarPlay()        
+      }
+      return;
     } else {
       if (repeatCondition === "repeat-one") {
-        setindexCurrent(indexCurrent);
       } else {
         nextIndex();
-      }      
+      }
 
-      if (indexCurrent >= playList.length) {
+      indiceActualizado = getStorage("indexCurrent") || indexCurrent;
+
+      if (indiceActualizado >= playList.length) {
         if (repeatCondition === "repeat-normal") {
           resetIndex();
+          player.pause();
+          playBtn.innerHTML = '<i class="fa-solid fa-circle-play play"></i>';
+          setTimeout(() => {
+            progress.max = 100;
+            progress.value = 0;
+          }, 5);
+          return;
         } else if (repeatCondition === "repeat-all") {
           resetIndex();
-          setStorage("indexCurrent", 0);
-          ejecutarPlay();
+          localStorage.setItem("indexCurrent", 0);
         }
       }
     }
 
-    setTrack(player, playList, indexCurrent);
-    ejecutarPlay();
+    indiceActualizado = getStorage("indexCurrent") || indexCurrent;
+
+    setTrack(player, playList, indiceActualizado);
+    setTimeout(() => {
+      progress.value = 0;
+    }, 5);
+    if (enPlay) {
+      ejecutarPlay();
+    }
   };
 
   player.addEventListener("ended", () => {

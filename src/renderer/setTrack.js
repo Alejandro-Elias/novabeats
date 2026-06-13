@@ -8,7 +8,10 @@ export const setTrack = async (player, playList, indexCurrrent) => {
 
   const path = `${playList[indexCurrrent].track.carpeta}/${playList[indexCurrrent].track.archivo}`;
 
-  setCurrent({ path: path });
+  setCurrent({ 
+    path: path,
+    id: playList[indexCurrrent].id 
+  });
 
   loadData();
 
