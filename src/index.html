@@ -77,9 +77,17 @@
                 <div class="playListContent">
                     <p>Lista de reproducción</p>
                     <div class="playList">
-                        <div id="guardarPlaylist" class="guardarPlaylist"></div>
-                        <span id="line" class="line" ></span>
-                        <ul id="listaReproduccion"></ul>
+                        <div id="guardarPlaylist" class="guardarPlaylist hidden">
+                            <p>Guardar Playlist</p><input id="inputGuardar" type="text" /><button
+                                id="listBtn">Guardar</button>
+                        </div>
+                        <span id="line" class="line hidden">
+                            <hr>
+                        </span>
+                        <div id="ambasListas">
+                            <ul id="listaReproduccion" class=""></ul>
+                            <ul id="lista-playlist" class="hidden"></ul>
+                        </div>
                     </div>
                 </div>
             </div>

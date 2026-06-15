@@ -3,32 +3,32 @@ import { playList } from "./buttons/play/loadList.js";
 import { mostrarlistas } from "./mostrarLista.js";
 
 export const guardarLista = () => {
-  const listBtn = document.getElementById("listBtn");
   const inputGuardar = document.getElementById("inputGuardar");
-  if (listBtn) {
-    listBtn.addEventListener("click", () => {
-      const guardarPlaylist = document.getElementById("guardarPlaylist");
+    const listBtn = document.getElementById("listBtn");
+  listBtn.addEventListener("click", () => {
+    console.log('click');
+    
+    const guardarPlaylist = document.getElementById("guardarPlaylist");
 
-      const nombreLista = inputGuardar.value;
+    const nombreLista = inputGuardar.value;
 
-      const listaActual = playList;
+    const listaActual = playList;
 
-      let listaAguardar = getStorage("playlists") || [];
+    let listaAguardar = getStorage("playlists") || [];
 
-      listaAguardar.push({
-        id:
-          listaAguardar.length > 0
-            ? listaAguardar[listaAguardar.length - 1].id + 1
-            : 1,
-        name: nombreLista,
-        playList: playList,
-      });
-
-      setStorage("playlists", listaAguardar);
-
-      inputGuardar.value = ``;
-
-      mostrarlistas();
+    listaAguardar.push({
+      id:
+        listaAguardar.length > 0
+          ? listaAguardar[listaAguardar.length - 1].id + 1
+          : 1,
+      name: nombreLista,
+      playList: playList,
     });
-  }
+
+    setStorage("playlists", listaAguardar);
+
+    inputGuardar.value = ``;
+
+    mostrarlistas();
+  });
 };

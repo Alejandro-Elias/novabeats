@@ -1,5 +1,3 @@
-
-
 .playlistZone {
     -webkit-app-region: no-drag;
     grid-column: 9 / 13;
@@ -18,7 +16,7 @@
     width: 100%;
 }
 
-.playListContent p {    
+.playListContent p {
     color: #0075ff;
 }
 
@@ -29,16 +27,30 @@
     align-items: end;
 }
 
-.guardarPlaylist p, .guardarPlaylist button {
+.guardarPlaylist p,
+.guardarPlaylist button {
     color: whitesmoke;
 }
 
-.guardarPlaylist p, .guardarPlaylist button, .gusrdarPlaylist input {
+.guardarPlaylist p,
+.guardarPlaylist button,
+.gusrdarPlaylist input {
     height: 16px;
 }
 
+#inputGuardar {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: rgb(50, 50, 50);
+    color: whitesmoke;
+    outline: none;
+    border: none;
+    padding: 0 3px;
+}
+
 .guardarPlaylist button {
-    width: 60px;
+    width: 70px;
 }
 
 .line {
@@ -83,6 +95,10 @@
     color: whitesmoke;
 }
 
+.hidden {
+    display: none;
+}
+
 .isFolderBtn {
     width: 25%;
     background: transparent;
@@ -97,12 +113,12 @@
     color: #0075ff;
 }
 
-.folder {    
+.folder {
     font-size: 20px;
 }
 
 .folderText {
-    font-size:16px;
+    font-size: 16px;
 }
 
 .listBtn {
@@ -126,7 +142,8 @@ button i:active {
     color: rgba(0, 117, 255, 0.5);
 }
 
-.suffleNoActive, .repeat {
+.suffleNoActive,
+.repeat {
     font-size: 36px;
 }
 
@@ -148,16 +165,16 @@ button i:active {
 
 .repeatActive {
     color: #0075ff;
-}  
+}
 
 .one-all {
     position: absolute;
-    font-size:9px;
+    font-size: 9px;
     top: 36%;
     left: 30%;
 }
 
-.item-playlist  {
+.item-playlist {
     width: 100%;
     text-align: start;
     color: whitesmoke;

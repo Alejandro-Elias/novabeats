@@ -18,10 +18,7 @@ export const updateActiveTrack = () => {
     track.classList.toggle("active", idActual === Number(track.dataset.id));
   });
 
-  const active = document.querySelector(".active");
-
-  console.log(active);
-  
+  const active = document.querySelector(".active");  
 
   active?.scrollIntoView({
     behavior: "smooth",

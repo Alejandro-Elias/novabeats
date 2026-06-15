@@ -54,10 +54,6 @@ export const nextTrack = () => {
     }
 
     indiceActualizado = getStorage("indexCurrent") || indexCurrent;
-    console.log({
-      index: indexCurrent,
-      indexActualizado: indiceActualizado,
-    });
 
     setTrack(player, playList, indiceActualizado);
     setTimeout(() => {

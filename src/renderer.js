@@ -10,10 +10,11 @@ import { nextTrack } from "./renderer/buttons/play/next.js";
 import { previousTrack } from "./renderer/buttons/play/previous.js";
 import { repeat } from "./renderer/repeat.js";
 import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
-import { mostrarLista } from "./renderer/mostrarLista.js";
+import { mostrarLista, mostrarlistas } from "./renderer/mostrarLista.js";
 import { loadList } from "./renderer/buttons/play/loadList.js";
 import { files } from "./renderer/files.js";
 import { guardarLista } from "./renderer/guardarPlaylist.js";
+import { SeleccionarLista } from "./renderer/selectPlaylist.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -30,19 +31,23 @@ import { guardarLista } from "./renderer/guardarPlaylist.js";
   export const selectFolder = document.getElementById("isFolderBtn");
   export const selectFiles = document.getElementById("isFileBtn");
   export const isListBtn = document.getElementById("isListBtn");
+  export const playlistSelect = document.getElementById("playlistSelect");
   export const inputGuardar = document.getElementById("inputGuardar");
   export const line = document.getElementById("line");
   export const listaReproduccion = document.getElementById("listaReproduccion");
+  export const listaPlaylist = document.getElementById("lista-playlist");
   export const nextBtn = document.getElementById("nextBtn");
   export const previousBtn = document.getElementById("previousBtn");
   export const repeatBtn = document.getElementById("repeatBtn") 
   export const repeatText = document.getElementById("repeatText") 
   export const eliminar = document.getElementById("eliminar") 
+  export const eliminarPlaylistBtn = document.getElementById("eliminarPlaylist") 
   export const guardarPlaylist = document.getElementById("guardarPlaylist") 
 
   export const list = [];
 
   mostrarLista();
+  mostrarlistas()
   mostrarMetadata();
   cerrarBtn();
   minimizarBtn();
@@ -57,3 +62,4 @@ import { guardarLista } from "./renderer/guardarPlaylist.js";
   selectPLayList()
   loadList()
   guardarLista()
+  SeleccionarLista()
