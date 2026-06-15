@@ -8,30 +8,52 @@
     flex-direction: column;
     justify-content: safe center;
     color: whitesmoke;
-    gap: 10px;
+    height: 200px;
 }
 
 .playListContent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
     width: 100%;
 }
 
-.playListContent p {    color: #0075ff;
+.playListContent p {    
+    color: #0075ff;
+}
 
+.guardarPlaylist {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    align-items: end;
+}
+
+.guardarPlaylist p, .guardarPlaylist button {
+    color: whitesmoke;
+}
+
+.guardarPlaylist p, .guardarPlaylist button, .gusrdarPlaylist input {
+    height: 16px;
+}
+
+.guardarPlaylist button {
+    width: 60px;
+}
+
+.line {
+    color: whitesmoke;
 }
 
 .playList {
     width: 100%;
-    height: 125px;
-    max-height: 125px;
+    height: 130px;
+    max-height: 130x;
     overflow: auto;
     padding: 2px 5px;
     background-color: rgb(80, 80, 80);
     border-radius: 10px;
-
+    margin-top: 5px;
 }
 
 .playList::-webkit-scrollbar {

@@ -13,6 +13,7 @@ import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
 import { mostrarLista } from "./renderer/mostrarLista.js";
 import { loadList } from "./renderer/buttons/play/loadList.js";
 import { files } from "./renderer/files.js";
+import { guardarLista } from "./renderer/guardarPlaylist.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -28,13 +29,16 @@ import { files } from "./renderer/files.js";
   export const volumenText = document.getElementById("volumen-texto");
   export const selectFolder = document.getElementById("isFolderBtn");
   export const selectFiles = document.getElementById("isFileBtn");
+  export const isListBtn = document.getElementById("isListBtn");
+  export const inputGuardar = document.getElementById("inputGuardar");
+  export const line = document.getElementById("line");
   export const listaReproduccion = document.getElementById("listaReproduccion");
   export const nextBtn = document.getElementById("nextBtn");
   export const previousBtn = document.getElementById("previousBtn");
   export const repeatBtn = document.getElementById("repeatBtn") 
   export const repeatText = document.getElementById("repeatText") 
   export const eliminar = document.getElementById("eliminar") 
-
+  export const guardarPlaylist = document.getElementById("guardarPlaylist") 
 
   export const list = [];
 
@@ -52,3 +56,4 @@ import { files } from "./renderer/files.js";
   repeat()
   selectPLayList()
   loadList()
+  guardarLista()

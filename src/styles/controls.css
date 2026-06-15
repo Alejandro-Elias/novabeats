@@ -66,13 +66,11 @@
 }
 
 .buttons:hover, .play:hover  {
-    color: #0075ffaa;
+    color: #0075ffbb;
 }
 
 .buttons:active, .play:active {
-    width: 100%;
-    border-radius: 50%;
-    border: 1px solid rgb(150, 150, 150);
+    color: #0075ff50;
 }
 
 .play {

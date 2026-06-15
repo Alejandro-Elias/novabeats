@@ -18,7 +18,7 @@ const createWindow = () => {
   });
 
   if (app.isPackaged) {
-  mainWindow.webContents.on("before-input-event", (event, input) => {
+  win.webContents.on("before-input-event", (event, input) => {
     if (
       input.key === "F12" ||
       (input.control && input.shift && input.key.toLowerCase() === "i")
