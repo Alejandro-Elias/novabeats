@@ -1,57 +1,99 @@
-# Novabets
+# NovaBets
 
-Reproductor de música local desarrollado con Electron.
+Reproductor de música local para Linux desarrollado con Electron.
+
+## Estado del proyecto
+
+**Versión actual:** 1.1.3-beta
+
+NovaBets es una aplicación funcional y apta para uso diario. Actualmente se encuentra en fase beta, por lo que pueden existir errores no detectados.
+
+Los reportes de errores, sugerencias y comentarios son bienvenidos.
+
+---
+
+## Capturas de pantalla
+
+### Pantalla principal
+
+<!-- Reemplazar por la captura principal de la aplicación -->
+
+![Pantalla principal](docs/screenshots/main-window.png)
+
+### Playlist cargada
+
+<!-- Reemplazar por una captura mostrando una playlist con varias canciones -->
+
+![Playlist](docs/screenshots/playlist.png)
+
+### Información de la pista
+
+<!-- Reemplazar por una captura donde se vean los metadatos o la carátula -->
+
+![Metadatos](docs/screenshots/track-info.png)
+
+---
 
 ## Descripción
 
-Novabets es una aplicación de escritorio orientada a la reproducción de música almacenada localmente. Permite cargar carpetas de audio, gestionar listas de reproducción y controlar la reproducción mediante una interfaz desarrollada con tecnologías web.
+NovaBets es un reproductor de música local orientado a usuarios que prefieren gestionar su propia biblioteca musical sin depender de servicios de streaming.
+
+Permite cargar carpetas de audio, gestionar playlists personalizadas y reproducir música mediante una interfaz sencilla desarrollada con tecnologías web modernas.
 
 El proyecto fue creado como parte de mi proceso de aprendizaje en desarrollo web Full Stack, aplicando JavaScript moderno, manipulación del DOM, almacenamiento local y desarrollo de aplicaciones de escritorio con Electron.
+
+---
 
 ## Características
 
 ### Reproducción de audio
 
-* Reproducción de archivos de audio locales.
-* Carga automática de carpetas musicales.
-* Navegación entre canciones.
-* Reproducción automática de la siguiente pista.
-* Modo aleatorio (Shuffle).
+- Reproducción de archivos de audio locales.
+- Carga automática de carpetas musicales.
+- Navegación entre canciones.
+- Reproducción automática de la siguiente pista.
+- Modo aleatorio (Shuffle).
+- Modo repetición.
 
 ### Gestión de playlists
 
-* Creación de listas de reproducción personalizadas.
-* Guardado de playlists mediante almacenamiento local.
-* Selección de playlists guardadas.
-* Eliminación de playlists almacenadas.
-* Cambio rápido entre la playlist actual y las playlists guardadas.
+- Creación de playlists personalizadas.
+- Guardado de playlists mediante almacenamiento local.
+- Selección de playlists guardadas.
+- Eliminación de playlists almacenadas.
+- Cambio rápido entre la playlist actual y playlists guardadas.
 
 ### Interfaz y experiencia de usuario
 
-* Controles de reproducción:
-
-  * Play
-  * Pause
-  * Next
-  * Previous
-  * Repeat
-* Control de volumen.
-* Persistencia de configuraciones entre sesiones.
-* Interfaz desarrollada con HTML, CSS y JavaScript.
+- Controles de reproducción:
+  - Play
+  - Pause
+  - Next
+  - Previous
+  - Repeat
+  - Shuffle
+- Control de volumen.
+- Persistencia de configuraciones entre sesiones.
+- Interfaz desarrollada con HTML, CSS y JavaScript.
 
 ### Información musical
 
-* Lectura de metadatos de archivos de audio.
-* Visualización de información de las pistas cargadas.
+- Lectura de metadatos de archivos de audio.
+- Visualización de información de las pistas.
+- Visualización de carátulas cuando están disponibles.
+
+---
 
 ## Tecnologías utilizadas
 
-* JavaScript
-* HTML5
-* CSS3
-* Electron
-* Node.js
-* music-metadata
+- JavaScript
+- HTML5
+- CSS3
+- Electron
+- Node.js
+- music-metadata
+
+---
 
 ## Instalación para desarrollo
 
@@ -74,6 +116,8 @@ Ejecutar la aplicación:
 npm start
 ```
 
+---
+
 ## Generar build
 
 ```bash
@@ -85,6 +129,8 @@ Los paquetes generados se almacenan en:
 ```text
 dist/
 ```
+
+---
 
 ## Estructura del proyecto
 
@@ -99,21 +145,30 @@ src/
 
 > La estructura puede variar a medida que evoluciona el proyecto.
 
-## Estado del proyecto
+---
 
-Proyecto en desarrollo activo.
+## Próximos objetivos
 
-### Próximos objetivos
+- Personalización de la interfaz.
+- Mejoras adicionales de rendimiento.
+- Mejoras en la experiencia de usuario.
+- Nuevas herramientas para organización de bibliotecas musicales.
+- Soporte para nuevas funcionalidades relacionadas con playlists.
+- Publicación y distribución mediante Flatpak.
 
-* Mejoras de rendimiento y optimización de renderizado.
-* Nuevas herramientas de gestión de playlists.
-* Mejoras en la experiencia de usuario.
-* Incorporación de nuevas funcionalidades relacionadas con la organización musical.
-* Continuar aplicando buenas prácticas de arquitectura y desarrollo.
+---
+
+## Feedback
+
+Si encuentras errores o tienes sugerencias, puedes abrir un Issue en GitHub.
+
+Todo feedback es bienvenido y ayuda a mejorar el proyecto.
+
+---
 
 ## Autor
 
-Alejandro Elias
+**Alejandro Elias**
 
 Desarrollador Web Full Stack
 

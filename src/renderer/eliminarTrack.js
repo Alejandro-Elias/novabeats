@@ -5,7 +5,7 @@ import { loadData } from "./getData.js";
 import { metadatos } from "./getMetadatos.js";
 import { resetIndex, setindexCurrent } from "./indexCurrent.js";
 
-export const eliminarTrack = (id) => {
+export const eliminarTrack = async (id) => {
   const trackActual = getCurrent();
 
   const playList = getStorage("playList");
@@ -32,7 +32,7 @@ export const eliminarTrack = (id) => {
 
   setStorage("playList", listaNueva);
   setStorage("playListSuffle", listaNuevaSuffle);
-  metadatos();
-  loadData()
-  loadList()
+  await metadatos();
+  loadData();
+  loadList();
 };

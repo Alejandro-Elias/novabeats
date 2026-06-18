@@ -14,10 +14,12 @@ export const guardarLista = () => {
 
     let listaAguardar = getStorage("playlists") || [];
 
-    if (listaAguardar.length > 0) {
+    console.trace("playlists")
+
+    if (listaActual.length > 0) {
       const nombreLista =
         inputGuardar.value ||
-        `playList ${listaAguardar[listaAguardar.length - 1].id + 1}`;
+        `playList ${ listaAguardar > 0 ? listaAguardar[listaAguardar.length - 1].id + 1 : 1}`;
 
       listaAguardar.push({
         id:

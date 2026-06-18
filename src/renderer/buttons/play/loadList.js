@@ -10,6 +10,7 @@ let playListSuffle = [];
 let playListRandom = false
 
 export const loadList = () => {
+
   playListNormal = getStorage("playList") || []
   playListSuffle = getStorage('playListSuffle') || []
   

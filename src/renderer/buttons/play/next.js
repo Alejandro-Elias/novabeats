@@ -1,6 +1,5 @@
 import { getStorage, setStorage } from "../../../localStorage.js";
-import { player } from "../../../renderer.js";
-import { loadData } from "../../getData.js";
+import { player, playBtn, progress, nextBtn } from "../../../renderer.js";
 import {
   indexCurrent,
   nextIndex,
@@ -9,7 +8,7 @@ import {
 } from "../../indexCurrent.js";
 import { updateActiveTrack } from "../../resaltarTrack.js";
 import { setTrack } from "../../setTrack.js";
-import { ejecutarPlay, playSelectItem } from "../play.js";
+import { ejecutarPlay } from "../play.js";
 import { loadList, playList } from "./loadList.js";
 
 let repeatCondition = "repeat-normal";

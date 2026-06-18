@@ -13,22 +13,19 @@ import { mostrarMetadata } from "./mostrarDatos.js";
 import { tiempos } from "./tiempos.js";
 
 export const loadData = async () => {
+  const current = getCurrent();
 
-  const current = getCurrent()
-
-  const metadatos = getList()
+  const metadatos = getList();
 
   if (metadatos) {
-    
-  
-  const dato = metadatos.find( dato => current.id === dato.id )
+    const dato = metadatos.find((dato) => current.id === dato.id);
 
-  setCurrent({ metadata: dato })
+    if (dato) {
+      setCurrent({ metadata: dato });
+      mostrarMetadata(titleEl, artistEl, imgCover);
+    }
 
-  mostrarMetadata(titleEl, artistEl, imgCover);
-
-  tiempos(player, progress, time);
+    tiempos(player, progress, time);
   }
-
   return;
 };

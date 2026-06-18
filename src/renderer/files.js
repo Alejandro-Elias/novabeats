@@ -12,8 +12,6 @@ export const files = async () => {
     await window.electronAPI.archivoALista();
     const index = getStorage("indexCurrent");
 
-    console.log(index);
-
     const nuevosArchivos = await window.electronAPI.devolverArchivos();
 
     if (nuevosArchivos.length > 0) {
@@ -21,7 +19,10 @@ export const files = async () => {
 
       nuevosArchivos.forEach((track, index) => {
         const song = {
-          id: nuevaPlaylist.length > 0 ? nuevaPlaylist[nuevaPlaylist.length - 1].id + 1 : index,
+          id:
+            nuevaPlaylist.length > 0
+              ? nuevaPlaylist[nuevaPlaylist.length - 1].id + 1
+              : index,
           track: track,
         };
         nuevaPlaylist.push(song);
@@ -36,8 +37,8 @@ export const files = async () => {
       suffle();
       mostrarLista();
       loadList();
-      metadatos()
-      loadData()
+      await metadatos();
+      loadData();
     }
   });
 };

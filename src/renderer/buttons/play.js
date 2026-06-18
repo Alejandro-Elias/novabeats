@@ -8,14 +8,12 @@ import { setTrack } from "../setTrack.js";
 import { loadList, playList } from "./play/loadList.js";
 
 export const ejecutarPlay = async () => {
+  const listaNueva = getStorage("listaNueva");
 
-  const listaNueva = getStorage("listaNueva")
-  
   if (listaNueva) {
-    loadList(); 
-    setStorage('listaNueva', false)
+    loadList();
+    setStorage("listaNueva", false);
   }
-
 
   if (!playList || playList.length <= 0) {
     alert("debe seleccionar una carpeta primero");
@@ -36,6 +34,7 @@ export const playSelectItem = async () => {
   await setTrack(player, playList, indexCurrent);
 
   updateActiveTrack();
+  await loadData();
   player.play();
   playBtn.innerHTML = '<i class="fa-solid fa-circle-pause play i-color"></i>';
 };
