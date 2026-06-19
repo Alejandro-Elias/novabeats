@@ -1,4 +1,4 @@
-# NovaBets
+# NovaBeats
 
 Reproductor de música local para Linux desarrollado con Electron.
 
@@ -6,7 +6,7 @@ Reproductor de música local para Linux desarrollado con Electron.
 
 **Versión actual:** 1.2.0
 
-NovaBets es una aplicación funcional y apta para uso diario. Actualmente se encuentra en fase beta, por lo que pueden existir errores no detectados.
+NovaBeats es una aplicación funcional y apta para uso diario. Actualmente se encuentra en fase beta, por lo que pueden existir errores no detectados.
 
 Los reportes de errores, sugerencias y comentarios son bienvenidos.
 
@@ -16,19 +16,13 @@ Los reportes de errores, sugerencias y comentarios son bienvenidos.
 
 ### Pantalla principal
 
-<!-- Reemplazar por la captura principal de la aplicación -->
-
 ![Pantalla principal](docs/screenshots/main-window.png)
 
 ### Playlist cargada
 
-<!-- Reemplazar por una captura mostrando una playlist con varias canciones -->
-
 ![Playlist](docs/screenshots/playlist.png)
 
 ### Información de la pista
-
-<!-- Reemplazar por una captura donde se vean los metadatos o la carátula -->
 
 ![Metadatos](docs/screenshots/track-info.png)
 
@@ -36,7 +30,7 @@ Los reportes de errores, sugerencias y comentarios son bienvenidos.
 
 ## Descripción
 
-NovaBets es un reproductor de música local orientado a usuarios que prefieren gestionar su propia biblioteca musical sin depender de servicios de streaming.
+NovaBeats es un reproductor de música local orientado a usuarios que prefieren gestionar su propia biblioteca musical sin depender de servicios de streaming.
 
 Permite cargar carpetas de audio, gestionar playlists personalizadas y reproducir música mediante una interfaz sencilla desarrollada con tecnologías web modernas.
 
@@ -100,8 +94,8 @@ El proyecto fue creado como parte de mi proceso de aprendizaje en desarrollo web
 Clonar el repositorio:
 
 ```bash
-git clone https://github.com/Alejandro-Elias/novabets.git
-cd novabets
+git clone https://github.com/Alejandro-Elias/novaBeats.git
+cd novaBeats
 ```
 
 Instalar dependencias:

@@ -1,11 +1,11 @@
-app-id: io.github.alejandroelias.Novabets
+app-id: io.github.alejandroelias.novaBeats
 runtime: org.freedesktop.Platform
 runtime-version: "25.08"
 sdk: org.freedesktop.Sdk
 base: org.electronjs.Electron2.BaseApp
 base-version: "25.08"
 
-command: novabets
+command: NovaBeats
 
 finish-args:
   - --share=ipc
@@ -16,7 +16,7 @@ finish-args:
   - --talk-name=org.freedesktop.Notifications
 
 modules:
-  - name: novabets
+  - name: NovaBeats
     buildsystem: simple
     build-commands:
       - npm install

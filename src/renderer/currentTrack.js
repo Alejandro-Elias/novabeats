@@ -2,10 +2,10 @@ let current = {
   id: 0,
   path: null,
   metadata: {
-    title: "NovaBets",
+    title: "NovaBeats",
     artist: "Music Player",
     duration: "00:00",
-    cover: ""
+    cover: "",
   },
 };
 
