@@ -7,8 +7,8 @@ const createWindow = () => {
   win = new BrowserWindow({
     width: 1262,
     height: 292,
-    resizable: false,
-    autoHideMenuBar: true,
+    resizable: true,
+    autoHideMenuBar: false,
     frame: false,
     transparent: true,
     icon: path.join(__dirname, 'build', 'icon.png'),
@@ -27,6 +27,18 @@ const createWindow = () => {
     }
   });
 }
+
+  ipcMain.on("set-compact-mode", (event, isCompact) => {
+      win.setResizable(true)
+      
+    if (isCompact) {
+      win.setSize(1262, 100)      
+    } else {      
+      win.setSize(1262, 392)
+    }
+
+      win.setResizable(false)
+  })
 
   ipcMain.on("close-app", () => {
     app.quit();

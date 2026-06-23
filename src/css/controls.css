@@ -77,3 +77,25 @@
     font-size: 50px;
     color: #0075ff;
 }
+
+body.compact .navegador {
+    grid-column: 2 / 11;
+    grid-row: unset;
+    overflow: hidden;
+}
+
+body.compact .buttons, body.compact .play {
+    font-size: 2vw;
+}
+
+body.compact .control-secundario {
+    font-size: 14px;
+}
+
+body.compact .repeat, body.compact .suffle {
+    font-size: 24px;
+}
+
+body.compact .one-all {
+    font-size: 6px;
+}

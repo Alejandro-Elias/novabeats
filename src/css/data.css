@@ -67,3 +67,93 @@
     width: 0;
     box-shadow: -300px 0 0 300px #0075ff;
 }
+
+.separacion, .duplicado {
+    display: none;
+}
+
+body.compact .titleBar {
+    display: flex;
+    flex-direction: row;
+}
+
+body.compact .datos {
+    grid-column: 11 /22;
+    flex-direction: row;
+    height: 50px;
+    width: 100%;
+    justify-content: left;
+}
+
+body.compact .titulos {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+    height: 26px;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    margin-left: 50px;
+    white-space: nowrap;
+    padding: 5px 10px;
+    background: rgb(80, 80, 80);
+    border-radius:13px;
+    margin-left: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+body.compact .textos-titulos {
+    display: inline-flex;
+    flex-shrink: 0;
+    animation: mover 4s linear infinite;
+    white-space: nowrap;
+}
+
+body.compact .separacion, body.compact .duplicado {
+    display: block;
+}
+
+.espacio {
+    display: block;
+    width: 20px;
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(0px);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+body.compact .textos{
+    font-size: 16px;
+    margin: 0 0 0 3px;
+    padding: 0;
+    text-align: right;
+    width: max-content;
+    white-space: no-wrap;
+    text-overflow: unset;
+    letter-spacing: 2px;
+}
+
+body.compact .progreso {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 28px;
+}
+
+body.compact .barra-progreso {
+    height: 26px;
+    width: 200px;
+    border-radius: 13px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 4px 0;
+}
+
+body.conpact .tiempo-progreso {
+    font-size: 16px;
+}

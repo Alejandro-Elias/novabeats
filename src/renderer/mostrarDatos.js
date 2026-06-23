@@ -1,4 +1,4 @@
-import { artistEl, imgCover, titleEl } from "../modules/renderer.js";
+import { artistEl, artistElDuplicado, imgCover, titleEl, titleElDuplicado } from "../modules/renderer.js";
 import { getCurrent } from "./currentTrack.js";
 
 let urlImagenActual = null;
@@ -45,6 +45,8 @@ export const mostrarMetadata = () => {
 
     titleEl.textContent = metadatos.metadata.title || "NovaBeats";
     artistEl.textContent = metadatos.metadata.artist || "Music Player";
+    titleElDuplicado.textContent = metadatos.metadata.title || "NovaBeats";
+    artistElDuplicado.textContent = metadatos.metadata.artist || "Music Player";
 
     navigator.mediaSession.playbackState = "playing";
   }

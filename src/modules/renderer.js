@@ -5,6 +5,7 @@ import { loadList } from "../renderer/buttons/play/loadList.js";
 import { nextTrack } from "../renderer/buttons/play/next.js";
 import { previousTrack } from "../renderer/buttons/play/previous.js";
 import { stop } from "../renderer/buttons/stop.js";
+import { compactMode } from "../renderer/compactMode.js";
 import { files } from "../renderer/files.js";
 import { folder } from "../renderer/folder.js";
 import { metadatos } from "../renderer/getMetadatos.js";
@@ -22,6 +23,8 @@ export const stopBtn = document.getElementById("stopBtn");
 export const progress = document.getElementById("progress");
 export const titleEl = document.getElementById("title");
 export const artistEl = document.getElementById("artist");
+export const titleElDuplicado = document.getElementById("titleDuplicado");
+export const artistElDuplicado = document.getElementById("artistDuplicado");
 export const volumen = document.getElementById("volumen-control");
 export const time = document.getElementById("tiempo-progreso");
 export const minimizar = document.getElementById("minimizar");
@@ -44,6 +47,7 @@ export const eliminar = document.getElementById("eliminar");
 export const eliminarPlaylistBtn = document.getElementById("eliminarPlaylist");
 export const guardarPlaylist = document.getElementById("guardarPlaylist");
 export const listaVacia = document.getElementById("listaVacia");
+export const compactBtn = document.getElementById("compactBtn");
 
 export const list = [];
 
@@ -65,3 +69,4 @@ loadList();
 guardarLista();
 seleccionarLista();
 metadatos();
+compactMode()

@@ -22,4 +22,7 @@ contextBridge.exposeInMainWorld("electronAPI", {
   devolverLista: () => {
     return ipcRenderer.invoke("devolver-lista")
   },
+  setCompactMode: (value) => {
+    ipcRenderer.send("set-compact-mode", value)
+  }
 });

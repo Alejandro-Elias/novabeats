@@ -208,3 +208,7 @@ button i:active {
     color: rgb(150, 150, 150);
     font-weight: 800;
 }
+
+body.compact .playlistZone {
+    display: none;
+}

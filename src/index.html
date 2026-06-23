@@ -17,8 +17,11 @@
     <title>NovaBeats</title>
 </head>
 
-<body>
+<body class="" >
     <div class="barra-cerrar">
+        <div class="container-button-main">
+            <button id="compactBtn" class="minimizar">Ꚛ</button>
+        </div>
         <div class="container-button-main ">
             <button id="minimizar" class="minimizar yellow">-</button>
         </div>
@@ -29,9 +32,17 @@
     <div class="reproductor">
         <main class="titlebar">
             <div class="datos">
-                <div class="titulos ">
-                    <h2 class="title" id="title"></h2>
-                    <p class="artist" id="artist"></p>
+                <div class="titulos">
+                    <div class="textos-titulos">
+                        <h1 class="title textos" id="title"></h1>
+                        <p class="separacion textos"> / </p>
+                        <p class="artist textos" id="artist"></p>
+                        <span class="espacio" ></span>
+                        <h1 class="title textos duplicado" id="titleDuplicado"></h1>
+                        <p class="separacion textos duplicado"> / </p>
+                        <p class="artist textos duplicado" id="artistDuplicado"></p>
+                        <span class="espacio" ></span>
+                    </div>
                 </div>
                 <div class="progreso">
                     <input class="barra-progreso" id="progress" type="range" value="0" min="0" max="100" step="0.1" />
@@ -62,7 +73,7 @@
                         <i id="repeatBtn" class="fa-solid fa-repeat repeat"><span id="repeatText"
                                 class="one-all">one</span></i>
                     </div>
-                    <i id="suffle" class="fa-solid fa-shuffle suffleNoActive"></i>
+                    <i id="suffle" class="fa-solid fa-shuffle suffle suffleNoActive"></i>
                 </button>
             </div>
             <div class="playlistZone">

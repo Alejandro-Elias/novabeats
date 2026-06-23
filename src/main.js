@@ -1,4 +1,4 @@
-const { app, protocol, BrowserWindow, net } = require("electron");
+const { app } = require("electron");
 
 const {
   carpetaALista,

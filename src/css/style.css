@@ -20,7 +20,6 @@ body {
 
 .reproductor {
     background-color: transparent;
-    overflow: hidden;
 }
 
 main {
@@ -94,4 +93,33 @@ button:focus {
 
 button:focus-visible {
     outline: 2px solid #666;
+}
+
+body.compact .reproductor {
+    height: 60px;
+}
+
+body.compact main {    
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: 1fr;
+    width: 1240px;
+    height: 60px;
+    padding: 5px 20px;
+    position: absolute;
+    z-index: 0;
+}
+
+body.compact .barra-cerrar {
+    position: relative;
+    width: 120px;
+    top: 25px;
+    right: 30px;
+    justify-self: end;
+    z-index: 10;
+    -webkit-app-region: no-drag;
+    height: 0;
+}
+
+body.compact .titlebar {
+    -webkit-app-region: no-drag;
 }
