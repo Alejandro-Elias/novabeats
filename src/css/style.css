@@ -20,6 +20,8 @@ body {
 }
 
 body {
+    user-select: none;
+    -webkit-user-select: none;
     background-color: transparent;
     opacity: 0;
     transition: opacity 0.2s ease;
