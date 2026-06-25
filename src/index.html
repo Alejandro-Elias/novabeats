@@ -12,26 +12,27 @@
     <link rel="stylesheet" href="./assets/fontAwesome/webfonts/all.min.css">
     <link rel="stylesheet" href="./css/animate.min.css">
     <link rel="icon" href="../build/icon.png">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'" />
     <meta http-equiv="X-Content-Security-Policy"
         content="default-src 'self'; img-src 'self' blob:; script-src 'self'; style-src 'self' 'unsafe-inline'" />
     <title>NovaBeats</title>
 </head>
 
 <body id="novaBody" class="animate__zoomIn">
-    <div class="barra-cerrar">
-        <div class="container-button-main">
-            <button id="compactBtn" class="minimizar yellow"><i class="fa-solid fa-angle-up"></i></button>
-        </div>
-        <div class="container-button-main ">
-            <button id="minimizar" class="minimizar yellow"><i class="fa-solid fa-angle-down"></i></i></button>
-        </div>
-        <div class="container-button-main ">
-            <button id="cerrar" class="cerrar red"><i class="fa-solid fa-xmark"></i></button>
-        </div>
-    </div>
     <div class="reproductor">
         <main class="titlebar">
+        <div class="barra-cerrar">
+            <div class="container-button-main">
+                <button id="compactBtn" class="minimizar yellow"><i class="fa-solid fa-angle-up"></i></button>
+            </div>
+            <div class="container-button-main ">
+                <button id="minimizar" class="minimizar yellow"><i class="fa-solid fa-angle-down"></i></i></button>
+            </div>
+            <div class="container-button-main ">
+                <button id="cerrar" class="cerrar red"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
             <div class="datos">
                 <div class="titulos">
                     <div class="textos-titulos">
@@ -50,15 +51,15 @@
                     </div>
                     <div id="visualizer" class="visualizer"></div>
                 </div>
-                <div class="progreso">
-                    <input class="barra-progreso" id="progress" type="range" value="0" min="0" max="100" step="0.1" />
-                    <p class="tiempo-progreso" id="tiempo-progreso">00:00 / 00:00</p>
-                </div>
             </div>
             <div class="caratula">
                 <img id="cover" src="" alt="cover">
             </div>
             <div class="navegador">
+                <div class="progreso">
+                    <input class="barra-progreso" id="progress" type="range" value="0" min="0" max="100" step="0.1" />
+                    <p class="tiempo-progreso" id="tiempo-progreso">00:00 / 00:00</p>
+                </div>
                 <div class="volumen">
                     <div class="vol-text">
                         <p>Volumen: </p>
@@ -69,10 +70,10 @@
                 </div>
                 <div class="control-principal">
                     <audio id="player"></audio>
-                    <button id="previousBtn"><i class="fa-solid fa-circle-arrow-left buttons"></i></button>
-                    <button id="stopBtn"><i class="fa-solid fa-circle-stop buttons"></i></button>
+                    <button id="previousBtn"><i class="fa-solid fa-backward-step buttons"></i></button>
+                    <button id="stopBtn"><i class="fa-solid fa-stop stop buttons"></i></button>
                     <button id="playBtn"><i class="fa-solid fa-circle-play play"></i></button>
-                    <button id="nextBtn"><i class="fa-solid fa-circle-arrow-right buttons"></i></button>
+                    <button id="nextBtn"><i class="fa-solid fa-forward-step buttons"></i></button>
                 </div>
                 <button class="control-secundario">
                     <div class="repeat-container">
@@ -91,6 +92,7 @@
                     <button id="isListBtn" class="isFolderBtn"><i class="fa-regular fa-rectangle-list folder"></i><span
                             class="folderText">Listas</span></button>
                 </div>
+                <hr class="division" >
                 <div class="playListContent">
                     <p>Lista de reproducción</p>
                     <div class="playList">

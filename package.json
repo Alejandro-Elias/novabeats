@@ -1,6 +1,6 @@
 {
   "name": "NovaBeats",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Reproductor de música local desarrollado con Electron.",
   "main": "./src/main.js",
   "type": "commonjs",

@@ -1,6 +1,6 @@
 .datos {
     grid-column: 3 / 9;
-    grid-row: 1 / 3;
+    grid-row: 2 / 4;
     display: flex;
     width: 100%;
     height: 100%;
@@ -24,14 +24,17 @@
     left: -250px;
     color: white;
     z-index: 1;
+    -webkit-app-region: drag;
 }
 
 .visualizer {
     position: absolute;
     top: 0;
-    margin-top: -0px;
+    margin-top: 20px;
     left: -248px;
     width: 500px;
+    height: 100px;
+    -webkit-app-region: drag;
 }
 
 .title {
@@ -43,6 +46,7 @@
     text-overflow: ellipsis;
     padding: 0 35px;
     font-size: 2rem;
+    -webkit-app-region: drag;
 }
 
 .artist {
@@ -51,39 +55,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-}
-
-.progreso {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    position: relative;
-}
-
-.tiempo-progreso {
-    position: absolute;
-    right: 60px;
-}
-
-.barra-progreso {
-    width: calc(100% - 100px);
-    margin: 0 50px;
-    -webkit-appearance: none;
-    appearance: none;
-    overflow: hidden;
-    height: 18px;
-    background: rgba(80, 80, 80, 0.1);
-    border: 1px solid rgb(80, 80, 80);
-    border-radius: 9px;
-}
-
-.barra-progreso::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    height: 0;
-    width: 0;
-    box-shadow: -300px 0 0 300px #0075ff;
+    -webkit-app-region: drag;
 }
 
 .separacion, .duplicado {

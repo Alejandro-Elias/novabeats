@@ -2,15 +2,56 @@
 
 .navegador {
     grid-column: 3 / 9;
-    grid-row: 3 / 5;
+    grid-row: 4 / 6;
     display: grid;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
+    color: white;
     grid-template-columns: repeat(3, 1fr);
 }
 
+.progreso {
+    grid-column: 1 / 4;
+    grid-row: 1 / 2 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    margin-top: -15px;
+}
+
+.tiempo-progreso {
+    position: absolute;
+    right: 60px;
+}
+
+.barra-progreso {
+    grid-column: 1 / 4;
+    width: calc(100% - 100px);
+    margin: 0 50px;
+    -webkit-appearance: none;
+    appearance: none;
+    overflow: hidden;
+    height: 18px;
+    background: rgba(80, 80, 80, 0.1);
+    border: 1px solid rgb(80, 80, 80);
+    border-radius: 9px;
+}
+
+.barra-progreso::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0;
+    width: 0;
+    box-shadow: -300px 0 0 300px #0075ff;
+}
+
 .volumen {
+
     grid-column: 1 / 2;
+    grid-row: 2 / 4;
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -49,20 +90,24 @@
 
 .control-principal {
     grid-column: 2 / 3;
+    grid-row: 2 / 4;
     display: flex;
     justify-content: center;
+    gap: 30px;
 }
 
 .control-secundario {
     grid-column: 3 / 4;
+    grid-row: 2 / 4;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
+    color: white;
 }
 .buttons {
-    font-size: 50px;
-    color: #0075ff;
+    font-size: 24px;
+    color: white;
 }
 
 .buttons:hover, .play:hover  {
@@ -76,6 +121,26 @@
 .play {
     font-size: 50px;
     color: #0075ff;
+    overflow: hidden;
+}
+
+.fa-circle-play {
+    position: relative;
+    color: #0075ff;
+    z-index: 1;
+}
+
+.fa-circle-play::after {
+    content: '';
+    position: absolute;
+    width: 79%;
+    height: 95%;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 body.compact .navegador {
