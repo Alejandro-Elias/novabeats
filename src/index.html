@@ -22,17 +22,27 @@
 <body id="novaBody" class="animate__zoomIn">
     <div class="reproductor">
         <main class="titlebar">
-        <div class="barra-cerrar">
-            <div class="container-button-main">
-                <button id="compactBtn" class="minimizar yellow"><i class="fa-solid fa-angle-up"></i></button>
+            <div class="barra-cerrar">
+                <div id="novabeats" class="animate__animated animate__fadeIn novabeats hidden" >
+                    <img src="./assets/images/logo.png" alt="" width="48" height="48" >
+                    <h2 class="animate__animated animate__fadeIn novabeats">NovaBeats</h2>
+                </div>
+                <span> &nbsp; </span>
+                <div class="container-button">
+                    <div class="container-button-main ">
+                        <button id="minimizar" class="minimizar yellow" title="Minimizar"><i
+                                class="fa-solid fa-window-minimize"></i></button>
+                    </div>
+                    <div class="container-button-main">
+                        <button id="compactBtn" class="minimizar yellow"><i class="fa-regular fa-square"
+                                title="Modo Compacto"></i></button>
+                    </div>
+                    <div class="container-button-main ">
+                        <button id="cerrar" class="cerrar red"><i class="fa-solid fa-xmark" title="Cerrar"></i></button>
+                    </div>
+                </div>
+
             </div>
-            <div class="container-button-main ">
-                <button id="minimizar" class="minimizar yellow"><i class="fa-solid fa-angle-down"></i></i></button>
-            </div>
-            <div class="container-button-main ">
-                <button id="cerrar" class="cerrar red"><i class="fa-solid fa-xmark"></i></button>
-            </div>
-        </div>
             <div class="datos">
                 <div class="titulos">
                     <div class="textos-titulos">
@@ -53,7 +63,7 @@
                 </div>
             </div>
             <div class="caratula">
-                <img id="cover" src="" alt="cover">
+                <img id="cover" class="animate__animated animate__fadeIn" src="" alt="cover">
             </div>
             <div class="navegador">
                 <div class="progreso">
@@ -70,35 +80,34 @@
                 </div>
                 <div class="control-principal">
                     <audio id="player"></audio>
-                    <button id="previousBtn"><i class="fa-solid fa-backward-step buttons"></i></button>
-                    <button id="stopBtn"><i class="fa-solid fa-stop stop buttons"></i></button>
-                    <button id="playBtn"><i class="fa-solid fa-circle-play play"></i></button>
-                    <button id="nextBtn"><i class="fa-solid fa-forward-step buttons"></i></button>
+                    <button id="previousBtn"><i class="fa-solid fa-backward-step buttons" title="Anterior"></i></button>
+                    <button id="playBtn" title="Play"><i class="fa-solid fa-circle-play play"></i></button>
+                    <button id="nextBtn"><i class="fa-solid fa-forward-step buttons" title="Siguiente"></i></button>
                 </div>
-                <button class="control-secundario">
-                    <div class="repeat-container">
-                        <i id="repeatBtn" class="fa-solid fa-repeat repeat"><span id="repeatText"
-                                class="one-all">one</span></i>
-                    </div>
-                    <i id="suffle" class="fa-solid fa-shuffle suffle suffleNoActive"></i>
-                </button>
+                <div class="control-secundario">
+                    <button id="repeatBtn" class="repeat-container">
+                        <i class="fa-solid fa-repeat repeat"></i>
+                    </button>
+                    <button><i id="suffle" class="fa-solid fa-shuffle suffle suffleNoActive"
+                            title="Mezclar"></i></button>
+                </div>
             </div>
             <div class="playlistZone">
                 <div class="listBtn">
                     <button id="isFolderBtn" class="isFolderBtn"><i class="fa-solid fa-folder-open folder"></i><span
-                            class="folderText">Carpeta</span></button>
+                            class="folderText" title="Elegir carpeta de Musica">Carpeta</span></button>
                     <button id="isFileBtn" class="isFolderBtn"><i class="fa-regular fa-file folder"></i><span
-                            class="folderText">Archivo</span></button>
+                            class="folderText" title="Elegir Archivo de Musica">Archivo</span></button>
                     <button id="isListBtn" class="isFolderBtn"><i class="fa-regular fa-rectangle-list folder"></i><span
-                            class="folderText">Listas</span></button>
+                            class="folderText" title="Elegir o guardar lista">Listas</span></button>
                 </div>
-                <hr class="division" >
+                <hr class="division">
                 <div class="playListContent">
                     <p>Lista de reproducción</p>
                     <div class="playList">
                         <div id="guardarPlaylist" class="guardarPlaylist hidden">
-                            <p>Guardar Playlist</p><input id="inputGuardar" type="text" /><button
-                                id="listBtn">Guardar</button>
+                            <p>Guardar Playlist</p><input id="inputGuardar" type="text" /><button id="listBtn"
+                                title="Guardar Lista">Guardar</button>
                         </div>
                         <span id="line" class="line hidden">
                             <hr>

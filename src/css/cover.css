@@ -21,6 +21,7 @@ body.compact .caratula {
 .caratula img {
     height: 100%;
     width: 100%;
+    --animate-duration: 1s;
 }
 
 body.compact .caratula img {

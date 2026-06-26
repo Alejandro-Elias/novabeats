@@ -1,5 +1,5 @@
 import { getStorage, setStorage } from "../../modules/localStorage.js";
-import { playBtn, player } from "../../modules/renderer.js";
+import { novabeats, playBtn, player } from "../../modules/renderer.js";
 import { listaNueva, setListaNueva } from "../folder.js";
 import { loadData } from "../getData.js";
 import { indexCurrent } from "../indexCurrent.js";
@@ -9,6 +9,8 @@ import { loadList, playList } from "./play/loadList.js";
 
 export const ejecutarPlay = async () => {
   const listaNueva = getStorage("listaNueva");
+
+  novabeats.classList.remove("hidden");
 
   if (listaNueva) {
     loadList();
@@ -52,8 +54,10 @@ export const play = () => {
   playBtn.addEventListener("click", () => {
     if (player.paused) {
       ejecutarPlay();
+      playBtn.title = "Pause"
     } else {
       ejecutarPause();
+      playBtn.title = "Play"
     }
   });
 

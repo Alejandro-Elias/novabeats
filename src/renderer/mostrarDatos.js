@@ -1,4 +1,12 @@
-import { artistEl, artistElDuplicado, artistElTriplicado, imgCover, titleEl, titleElDuplicado, titleElTriplicado } from "../modules/renderer.js";
+import {
+  artistEl,
+  artistElDuplicado,
+  artistElTriplicado,
+  imgCover,
+  titleEl,
+  titleElDuplicado,
+  titleElTriplicado,
+} from "../modules/renderer.js";
 import { getCurrent } from "./currentTrack.js";
 
 let urlImagenActual = null;
@@ -7,13 +15,13 @@ export const mostrarMetadata = () => {
   const metadatos = getCurrent();
 
   requestAnimationFrame(() => {
-    const ancho = document.querySelector('.textos-titulos').scrollWidth;
+    const ancho = document.querySelector(".textos-titulos").scrollWidth;
 
     const duracion = Math.max(15, ancho / 50);
 
-    document.querySelector('.textos-titulos')
-        .style.animationDuration = `${duracion}s`;
-});
+    document.querySelector(".textos-titulos").style.animationDuration =
+      `${duracion}s`;
+  });
 
   if (metadatos || metadatos.length > 0) {
     document.title = `${metadatos.metadata.artist} - ${metadatos.metadata.title}`;
@@ -53,12 +61,19 @@ export const mostrarMetadata = () => {
     }
 
     titleEl.textContent = metadatos.metadata.title || "NovaBeats";
+    titleEl.title = metadatos.metadata.title || "NovaBeats"
     artistEl.textContent = metadatos.metadata.artist || "Music Player";
+    artistEl.title = metadatos.metadata.artist || "Music Player";
     titleElDuplicado.textContent = metadatos.metadata.title || "NovaBeats";
     artistElDuplicado.textContent = metadatos.metadata.artist || "Music Player";
     artistEl.textContent = metadatos.metadata.artist || "Music Player";
     titleElTriplicado.textContent = metadatos.metadata.title || "NovaBeats";
-    artistElTriplicado.textContent = metadatos.metadata.artist || "Music Player";
+    artistElTriplicado.textContent =
+      metadatos.metadata.artist || "Music Player";
+
+  imgCover.classList.remove("animate__animated", "animate__fadeIn");
+  void imgCover.offsetWidth;
+  imgCover.classList.add("animate__animated", "animate__fadeIn");
 
     navigator.mediaSession.playbackState = "playing";
   }

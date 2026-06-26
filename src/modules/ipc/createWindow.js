@@ -7,38 +7,52 @@ const createWindow = () => {
   win = new BrowserWindow({
     width: 1300,
     height: 350,
+    fullscreenable: false,
+    maximizable: false,
     resizable: true,
     autoHideMenuBar: false,
     frame: false,
     transparent: true,
-    icon: path.join(__dirname, 'build', 'icon.png'),
+    icon: path.join(__dirname, "build", "icon.png"),
     webPreferences: {
       preload: path.join(__dirname, "../preload.js"),
-    },    
+    },
   });
 
   if (app.isPackaged) {
-  win.webContents.on("before-input-event", (event, input) => {
-    if (
-      input.key === "F12" ||
-      (input.control && input.shift && input.key.toLowerCase() === "i")
-    ) {
-      event.preventDefault();
-    }
+    win.webContents.on("before-input-event", (event, input) => {
+      if (
+        input.key === "F12" ||
+        (input.control && input.shift && input.key.toLowerCase() === "i")
+      ) {
+        event.preventDefault();
+      }
+    });
+  }
+
+  win.on("enter-full-screen", (event) => {
+    event.preventDefault();
   });
-}
+
+  win.on("maximize", (e) => {
+    e.preventDefault();
+    win.unmaximize();
+  });
+
+  win.setMinimumSize(1300, 100);
+  win.setMaximumSize(1300, 400);
 
   ipcMain.on("set-compact-mode", (event, isCompact) => {
-      win.setResizable(true)
-      
+    win.setResizable(true);
+
     if (isCompact) {
-      win.setSize(1300, 100)      
-    } else {      
-      win.setSize(1300, 392)
+      win.setSize(1300, 100);
+    } else {
+      win.setSize(1300, 392);
     }
 
-      win.setResizable(false)
-  })
+    win.setResizable(false);
+  });
 
   ipcMain.on("close-app", () => {
     app.quit();

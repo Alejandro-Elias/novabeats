@@ -12,7 +12,7 @@ export const mostrarlistas = () => {
   listaPlaylist.innerHTML = "";
   const listasGuardadas = getStorage("playlists") || [];
   for (let i = 0; i < listasGuardadas.length; i++) {
-    listaPlaylist.innerHTML += `<li class="track" data-id="${listasGuardadas[i].id}"><button class="item-playlist" data-action="seleccionar" data-index="${i}" data-id="${listasGuardadas[i].id}" > ${listasGuardadas[i].name}</button><button id="eliminar" data-action="eliminar" class="eliminar" data-id="${listasGuardadas[i].id}"><i class="fa-solid fa-square-xmark eliminarBtn"></i></button></li>`;
+    listaPlaylist.innerHTML += `<li class="track" data-id="${listasGuardadas[i].id}"><button class="item-playlist" data-action="seleccionar" data-index="${i}" title="Seleccionar canción" data-id="${listasGuardadas[i].id}" > ${listasGuardadas[i].name}</button><button id="eliminar" data-action="eliminar" class="eliminar" title="Eliminar canción" data-id="${listasGuardadas[i].id}"><i class="fa-solid fa-square-xmark eliminarBtn"></i></button></li>`;
   }
 };
 
@@ -22,7 +22,7 @@ export const mostrarLista = () => {
   listaReproduccion.innerHTML = "";
 
   const listaHTML = (list, i) => {
-    return (listaReproduccion.innerHTML += `<li class="track" data-id="${list[i].id}"><button class="item-playlist" data-action="seleccionar" data-index="${i}" data-id="${list[i].id}" > ${list[i].track.archivo}</button><button id="eliminar" data-action="eliminar" class="eliminar" data-id="${list[i].id}"><i class="fa-solid fa-square-xmark eliminarBtn"></i></button></li>`);
+    return (listaReproduccion.innerHTML += `<li class="track" data-id="${list[i].id}"><button class="item-playlist" data-action="seleccionar" data-index="${i}" title="Seleccionar canción" data-id="${list[i].id}" > ${list[i].track.archivo}</button><button id="eliminar" data-action="eliminar" class="eliminar" title="Eliminar canción" data-id="${list[i].id}"><i class="fa-solid fa-square-xmark eliminarBtn"></i></button></li>`);
   };
   if (playList.length > 0) {
     listaVacia.classList.add("hidden");

@@ -56,6 +56,17 @@ main {
     box-shadow: 1px 1px 8px 3px #023BE6;
 }
 
+.container-button {
+    display: flex;
+}
+
+.novabeats {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    color: white;    
+}
+
 .barra-cerrar {
     grid-column: 1 / 13;
     grid-row: 1 / 2;
@@ -68,6 +79,7 @@ main {
     width: 1262;
     -webkit-app-region: drag;
     margin-top: 10px;
+    justify-content: space-between;
 }
 
 .container-button-main {

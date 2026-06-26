@@ -7,6 +7,7 @@
     justify-content: safe center;
     color: whitesmoke;
     height: 200px;
+    justify-content: space-between;
 }
 
 .playListContent {
@@ -14,6 +15,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    height: 144px ;
 }
 
 .playListContent p {
@@ -130,7 +132,7 @@ ul {
 }
 
 .active {
-    background-color: #0075ff;
+    background-color: #0075ff50;
 }
 
 .i-color {
@@ -143,38 +145,6 @@ button i:active {
 
 .division {
     margin: 10px 0;
-}
-
-.suffleNoActive,
-.repeat {
-    font-size: 36px;
-}
-
-.suffleActive {
-    color: #0075ff;
-    font-size: 36px;
-}
-
-.repeat-container {
-    position: relative;
-}
-
-.repeat {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.repeatActive {
-    color: #0075ff;
-}
-
-.one-all {
-    position: absolute;
-    font-size: 9px;
-    top: 36%;
-    left: 30%;
 }
 
 .item-playlist {
