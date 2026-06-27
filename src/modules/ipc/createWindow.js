@@ -34,11 +34,6 @@ const createWindow = () => {
     event.preventDefault();
   });
 
-  win.on("maximize", (e) => {
-    e.preventDefault();
-    win.unmaximize();
-  });
-
   win.setMinimumSize(1300, 100);
   win.setMaximumSize(1300, 400);
 
@@ -46,7 +41,7 @@ const createWindow = () => {
     win.setResizable(true);
 
     if (isCompact) {
-      win.setSize(1300, 100);
+      win.setSize(1300, 100);      
     } else {
       win.setSize(1300, 392);
     }
@@ -62,6 +57,7 @@ const createWindow = () => {
   });
 
   win.loadFile("./src/index.html");
+  
 };
 
 module.exports = createWindow;

@@ -4,6 +4,14 @@
     padding: 0;
 }
 
+.novabeats {
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
+    -webkit-app-region: drag;
+    width: 100%;
+}
+
 @font-face {
     font-family: 'Roboto';
     src: url('../assets/fonts/Roboto/static/Roboto-Bold.ttf') format('truetype');
@@ -24,16 +32,6 @@
     --color-resaltado: rgba(0, 117, 255, 0.5);
 }
 
-.titlebar {
-    -webkit-app-region: drag;
-}
-
-
-button,
-input {
-    -webkit-app-region: no-drag;
-}
-
 html,
 body {
     overflow: hidden;
@@ -46,7 +44,6 @@ body {
     background-color: transparent;
     opacity: 0;
     transition: opacity 0.2s ease;
-    -webkit-app-region: drag;
     color: var(--color-primario);
 }
 
@@ -83,13 +80,8 @@ main {
     color: var(--color-primario);
 }
 
-.novabeats {
-    display: flex;
-    align-items: center;
-    margin-left: 5px;
-}
-
 .barra-cerrar {
+    -webkit-app-region: drag;
     grid-column: 1 / 13;
     grid-row: 1 / 2;
     display: flex;
@@ -99,7 +91,6 @@ main {
     justify-content: end;
     align-items: center;
     width: 1262;
-    -webkit-app-region: drag;
     margin-top: 10px;
     justify-content: space-between;
 }
@@ -113,6 +104,7 @@ main {
     align-items: center;
     margin-right: 10px;
     margin-bottom: 10px;
+    -webkit-app-region: no-drag;
 }
 
 .minimizar,
@@ -159,30 +151,54 @@ button:focus-visible {
 
 body.compact .reproductor {
     width: 1300px;
-    height: 80px;
+    height: 60px;
 }
 
 body.compact main {
-    grid-template-columns: repeat(24, 1fr);
-    grid-template-rows: 1fr;
     width: 1240px;
     height: 60px;
     padding: 5px 20px;
     position: absolute;
     z-index: 0;
-}
-
-body.compact .barra-cerrar {
-    position: relative;
-    width: 120px;
-    top: 25px;
-    right: 30px;
-    justify-self: end;
-    z-index: 10;
-    -webkit-app-region: no-drag;
-    height: 0;
+    align-items: center;
 }
 
 body.compact .titlebar {
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: 1fr;
+    display: grid;
+    align-items: baseline;
+    grid-row: unset;
     -webkit-app-region: no-drag;
+    height: 60px;
+    width: 100%;
+    justify-content: space-between;
+    position: static;
+    padding: 0 20PX;
+    align-items: center;
+}
+
+body.compact .barra-cerrar {
+    display: flex;
+    position: static;
+    width: 100%;
+    grid-column: 24 / 36;
+    grid-row: 1 / 2;
+    height: 60px;
+    -webkit-app-region: no-drag;
+    width: 300px;
+    margin-top: 0;
+    align-items: center;
+}
+
+body.compact .container-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    height: 60px;
+}
+
+body.compact .novabeats {
+    -webkit-app-region: drag;
 }

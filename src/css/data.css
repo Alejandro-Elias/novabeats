@@ -1,6 +1,6 @@
 :root {
-    --color-primario: rgb(230, 230, 255) ;
-    --color-secundario: rgb(0, 117, 255) ;
+    --color-primario: rgb(230, 230, 255);
+    --color-secundario: rgb(0, 117, 255);
     --color-resaltado: rgba(0, 117, 255, 0.5);
 }
 
@@ -13,7 +13,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    -webkit-app-region: drag;
+    z-index: 1;
 }
 
 .titulos {
@@ -21,24 +21,25 @@
     justify-content: space-around;
     height: 100%;
     position: relative;
+    z-index: 1;
 }
 
 .textos-titulos {
     position: absolute;
     top: 0;
     left: -250px;
-    z-index: 999;
-    -webkit-app-region: drag;
 }
 
-.visualizer {
+.visualizer {    
     position: absolute;
+    color: transparent;
     top: 0;
     margin-top: 20px;
     left: -248px;
     width: 500px;
     height: 100px;
-    -webkit-app-region: drag;
+    pointer-events: none;
+    z-index: -1;
 }
 
 .title {
@@ -50,7 +51,6 @@
     text-overflow: ellipsis;
     padding: 0 35px;
     font-size: 2rem;
-    -webkit-app-region: drag;
 }
 
 .artist {
@@ -59,41 +59,40 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    -webkit-app-region: drag;
 }
 
-.separacion, .duplicado {
+.separacion,
+.duplicado {
     display: none;
 }
 
-body.compact .titleBar {
+body.compact .datos {
+    grid-column: 2 / 11;
+    grid-row: 1 / 2;
     display: flex;
     flex-direction: row;
-}
-
-body.compact .datos {
-    grid-column: 11 /22;
-    flex-direction: row;
-    height: 50px;
+    align-items: center;
+    justify-content: start;
+    height: 60px;
     width: 100%;
-    justify-content: left;
+    padding: 0 25px;
 }
 
 body.compact .titulos {
     display: flex;
     flex-direction: row;
-    width: 500px;
     height: 26px;
     align-items: center;
-    justify-content: flex-start;
     overflow: hidden;
     margin-left: 50px;
     white-space: nowrap;
     padding: 5px 10px;
-    background: rgb(80, 80, 80);
-    border-radius:13px;
+    background: var(--color-resaltado);
+    border-radius: 13px;
     margin-left: 0px;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 50%;
+    position: inherit;
 }
 
 body.compact .textos-titulos {
@@ -101,9 +100,11 @@ body.compact .textos-titulos {
     flex-shrink: 0;
     animation: mover 9s linear infinite;
     white-space: nowrap;
+    position: static;
 }
 
-body.compact .separacion, body.compact .duplicado {
+body.compact .separacion,
+body.compact .duplicado {
     display: block;
 }
 
@@ -114,7 +115,7 @@ body.compact .separacion, body.compact .duplicado {
 
 @keyframes mover {
     from {
-        transform: translateX(5px);
+        transform: translateX(-2px);
     }
 
     to {
@@ -122,7 +123,7 @@ body.compact .separacion, body.compact .duplicado {
     }
 }
 
-body.compact .textos{
+body.compact .textos {
     font-size: 16px;
     margin: 3px 0 0 3px;
     padding: 0;
@@ -153,6 +154,12 @@ body.conpact .tiempo-progreso {
 }
 
 body.compact .visualizer {
-    display: none;
-    height: 0;
+    background-color: transparent;
+    position: absolute;
+    height: 32px;
+    width: 135px;
+    left: 285px;
+    top: 15px;
+    border: 1px solid var(--color-secundario);
+    pointer-events: none;
 }

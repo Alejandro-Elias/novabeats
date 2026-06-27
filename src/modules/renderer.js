@@ -18,7 +18,7 @@ import { mostrarLista, mostrarlistas } from "../renderer/mostrarLista.js";
 import { repeat } from "../renderer/repeat.js";
 import { selectPLayList } from "../renderer/SelectItemPlaylist.js";
 import { seleccionarLista } from "../renderer/selectPlaylist.js";
-import { initVisualizer } from "../renderer/vizualizer.js";
+import { initVisualizer, resetAnalizer } from "../renderer/vizualizer.js";
 import { cambiarVolumen } from "../renderer/volumen.js";
 
 export const player = document.getElementById("player");
@@ -77,4 +77,6 @@ loadList();
 guardarLista();
 seleccionarLista();
 metadatos();
+
 player.addEventListener("play", initVisualizer);
+player.addEventListener("play", resetAnalizer);

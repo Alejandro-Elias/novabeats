@@ -2,8 +2,29 @@ import AudioMotionAnalyzer from "../assets/audioMotion-analyzer-4.5.4/src/audioM
 
 let audioMotion;
 
+export const resetAnalizer = () => {  
+  if (!audioMotion) return;
+
+  const body = document.getElementById("novaBody");
+
+  if (body.classList.contains("compact")) {
+    audioMotion.setOptions({
+      height: 30,
+      gradient: "classic",
+    });
+  } else {
+    audioMotion.setOptions({
+      height: 80,
+      gradient: "steelblue",
+    });
+  }
+};
+
 export const initVisualizer = () => {
-  if (audioMotion) return;
+
+  if (audioMotion) {
+    return    
+  }
 
   const audio = document.getElementById("player");
   const container = document.getElementById("visualizer");
@@ -20,7 +41,7 @@ export const initVisualizer = () => {
     barSpace: 0.5,
     gradient: "steelblue",
     howScaleX: false,
-    showScaleY: false,   
+    showScaleY: false,
   });
   audioMotion.showScaleX = false;
 };

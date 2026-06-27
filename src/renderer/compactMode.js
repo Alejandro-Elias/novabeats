@@ -1,5 +1,6 @@
 import { compactBtn } from "../modules/renderer.js";
 import { novaBody } from "../modules/renderer.js";
+import { initVisualizer, resetAnalizer } from "./vizualizer.js";
 
 let isCompact = false;
 
@@ -22,5 +23,6 @@ export const compactMode = () => {
     await window.electronAPI.setCompactMode(isCompact);
 
     document.body.classList.toggle("compact");
+    resetAnalizer()
   });
 };

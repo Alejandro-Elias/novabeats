@@ -116,6 +116,7 @@
     color: var(--color-primario);
     width: 120px;
     -webkit-app-region: no-drag;
+    padding-left: 15px;
 }
 
 .suffleNoActive,
@@ -193,9 +194,16 @@
 }
 
 body.compact .navegador {
-    grid-column: 2 / 11;
-    grid-row: unset;
     overflow: hidden;
+    grid-column: 11 / 23;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+body.compact .progreso {
+    display: none;
 }
 
 body.compact .buttons, body.compact .play {
@@ -204,6 +212,7 @@ body.compact .buttons, body.compact .play {
 
 body.compact .control-secundario {
     font-size: 14px;
+    border-radius: 1px solid red;
 }
 
 body.compact .repeat, body.compact .suffle {
@@ -212,4 +221,16 @@ body.compact .repeat, body.compact .suffle {
 
 body.compact .one-all {
     font-size: 6px;
+}
+
+body.compact .buttons {
+    font-size: 16px;
+}
+
+body.compact .play {
+    font-size: 24px;
+}
+
+body.compact .one-all {
+    font-size: 16px;
 }
