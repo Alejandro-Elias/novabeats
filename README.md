@@ -1,40 +1,40 @@
 # NovaBeats
 
-Reproductor de música local para Linux desarrollado con Electron.
+Reproductor de música local para Linux y Windows desarrollado con Electron.
 
-## Estado del proyecto
+## Tabla de contenidos
 
-**Versión actual:** 1.2.0
-
-NovaBeats es una aplicación funcional y apta para uso diario. Actualmente se encuentra en fase beta, por lo que pueden existir errores no detectados.
-
-Los reportes de errores, sugerencias y comentarios son bienvenidos.
-
----
-
-## Capturas de pantalla
-
-### Pantalla principal
-
-![Pantalla principal](docs/screenshots/main-window.png)
-
-### Playlist cargada
-
-![Playlist](docs/screenshots/playlist.png)
-
-### Información de la pista
-
-![Metadatos](docs/screenshots/track-info.png)
+- [Descripción](#descripción)
+- [Estado del proyecto](#estado-del-proyecto)
+- [Características](#características)
+- [Cómo usar](#cómo-usar)
+- [Tecnologías utilizadas](#tecnologías-utilizadas)
+- [Instalación para desarrollo](#instalación-para-desarrollo)
+- [Generar build](#generar-build)
+- [Estructura del proyecto](#estructura-del-proyecto)
+- [Próximos objetivos](#próximos-objetivos)
+- [Feedback](#feedback)
+- [Autor](#autor)
 
 ---
 
 ## Descripción
 
-NovaBeats es un reproductor de música local orientado a usuarios que prefieren gestionar su propia biblioteca musical sin depender de servicios de streaming.
+NovaBeats es un reproductor de música local diseñado para usuarios que prefieren tener el control total de su biblioteca musical sin depender de servicios de streaming.
 
-Permite cargar carpetas de audio, gestionar playlists personalizadas y reproducir música mediante una interfaz sencilla desarrollada con tecnologías web modernas.
+Con una interfaz limpia y funciones de escritorio, NovaBeats permite cargar carpetas completas o archivos individuales, crear y gestionar playlists, reproducir música con controles avanzados y ver metadatos de las pistas.
 
-El proyecto fue creado como parte de mi proceso de aprendizaje en desarrollo web Full Stack, aplicando JavaScript moderno, manipulación del DOM, almacenamiento local y desarrollo de aplicaciones de escritorio con Electron.
+El proyecto integra tecnologías web modernas, manipulación del DOM, almacenamiento local y la plataforma Electron para ofrecer una experiencia de escritorio estable y funcional.
+
+---
+
+## Estado del proyecto
+
+**Versión actual:** 1.2.4
+
+NovaBeats es una aplicación funcional apta para uso diario. Actualmente está en fase beta, por lo que pueden existir errores no detectados.
+
+Los reportes de errores, sugerencias y mejoras son bienvenidos.
 
 ---
 
@@ -43,38 +43,50 @@ El proyecto fue creado como parte de mi proceso de aprendizaje en desarrollo web
 ### Reproducción de audio
 
 - Reproducción de archivos de audio locales.
-- Carga automática de carpetas musicales.
-- Navegación entre canciones.
-- Reproducción automática de la siguiente pista.
-- Modo aleatorio (Shuffle).
-- Modo repetición.
+- Selección de carpetas de música completas.
+- Selección de archivos individuales de audio.
+- Controles de reproducción: reproducir/pausar, anterior y siguiente.
+- Avance automático a la siguiente pista.
+- Modo shuffle para mezclar la reproducción.
+- Modo repetición con tres estados: sin repetir, repetir toda la lista y repetir una sola canción.
+- Control de volumen con slider y valor numérico guardado entre sesiones.
+- Barra de progreso y visualización del tiempo de reproducción.
+- Navegación compatible con Media Session API (reproducir, pausar, siguiente y anterior).
 
 ### Gestión de playlists
 
-- Creación de playlists personalizadas.
-- Guardado de playlists mediante almacenamiento local.
-- Selección de playlists guardadas.
+- Visualización de la lista de reproducción actual.
+- Guardado de playlists personalizadas en almacenamiento local.
+- Carga de playlists guardadas.
 - Eliminación de playlists almacenadas.
-- Cambio rápido entre la playlist actual y playlists guardadas.
+- Alternancia rápida entre la lista activa y las playlists guardadas.
 
 ### Interfaz y experiencia de usuario
 
-- Controles de reproducción:
-  - Play
-  - Pause
-  - Next
-  - Previous
-  - Repeat
-  - Shuffle
-- Control de volumen.
-- Persistencia de configuraciones entre sesiones.
-- Interfaz desarrollada con HTML, CSS y JavaScript.
+- Aplicación de escritorio desarrollada con HTML, CSS y JavaScript.
+- Botones de ventana: minimizar, modo compacto y cerrar.
+- Modo compacto para una vista reducida del reproductor.
+- Visualizador de audio animado integrado.
+- Animaciones y transiciones suaves con CSS.
+- Persistencia de configuraciones de usuario mediante almacenamiento local.
 
 ### Información musical
 
 - Lectura de metadatos de archivos de audio.
-- Visualización de información de las pistas.
+- Visualización del título de la pista y el artista.
 - Visualización de carátulas cuando están disponibles.
+- Actualización dinámica de metadatos al cambiar de pista.
+
+---
+
+## Cómo usar
+
+1. Abre NovaBeats.
+2. Selecciona una carpeta de música o un archivo de audio.
+3. Reproduce, pausa o navega entre pistas con los controles.
+4. Ajusta el volumen con el slider.
+5. Guarda tu lista de reproducción actual para usarla después.
+6. Cambia entre el modo normal y el modo compacto según tu preferencia.
 
 ---
 
@@ -132,23 +144,23 @@ dist/
 src/
 ├── main.js
 ├── index.html
-├── renderer/
 ├── modules/
+├── renderer/
 ├── css/
 └── assets/
 ```
 
-> La estructura está organizada para mantener una separación clara entre componentes renderer, módulos reutilizables, estilos y activos.
+Esta estructura mantiene separados los componentes principales de la aplicación: la ventana principal, los módulos de la aplicación, la lógica del renderer, los estilos y los activos.
 
 ---
 
 ## Próximos objetivos
 
 - Personalización de la interfaz.
-- Mejoras adicionales de rendimiento.
+- Mejoras de rendimiento.
 - Mejoras en la experiencia de usuario.
 - Nuevas herramientas para organización de bibliotecas musicales.
-- Soporte para nuevas funcionalidades relacionadas con playlists.
+- Soporte para más formatos y manejo de listas.
 - Publicación y distribución mediante Flatpak.
 
 ---
@@ -157,7 +169,7 @@ src/
 
 Si encuentras errores o tienes sugerencias, puedes abrir un Issue en GitHub.
 
-Todo feedback es bienvenido y ayuda a mejorar el proyecto.
+Todo feedback es bienvenido y contribuye a mejorar el proyecto.
 
 ---
 
