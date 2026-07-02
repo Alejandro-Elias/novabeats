@@ -28,14 +28,13 @@
   "build": {
     "appId": "io.github.alejandroelias.NovaBeats",
     "productName": "NovaBeats",
-
+    "files": [
+      "src/**/*",
+      "build/**/*",
+      "package.json"
+    ],
     "electronVersion": "42.1.0",
-
-    "electronDownload": {
-      "cache": "/run/build/novabeats/electron-cache",
-      "mirror": "https://github.com/electron/electron/releases/download/"
-    },
-
+    "electronDist": "node_modules/electron/dist",
     "linux": {
       "target": [
         "deb",
@@ -44,7 +43,6 @@
       "category": "AudioVideo",
       "icon": "build"
     },
-
     "win": {
       "icon": "build/icon.ico"
     }

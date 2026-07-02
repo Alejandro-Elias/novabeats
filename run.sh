@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/bin/bash
 
-cd /app/nova || exit 1
-
-exec /app/nova/node_modules/electron/dist/electron --no-sandbox /app/nova/src/main.js "$@"
+exec zypak-wrapper.sh \
+    /app/main/novabeats \
+    "$@"

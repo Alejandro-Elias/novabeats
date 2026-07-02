@@ -8,49 +8,46 @@ base: org.electronjs.Electron2.BaseApp
 base-version: "25.08"
 
 sdk-extensions:
-  - org.freedesktop.Sdk.Extension.node20
-
-build-options:
-  env:
-    PATH: /usr/lib/sdk/node20/bin:${PATH}
-    npm_config_nodedir: /usr/lib/sdk/node20
+  - org.freedesktop.Sdk.Extension.node24
 
 command: run.sh
+separate-locales: false
 
 finish-args:
   - --share=ipc
-  - --socket=x11
   - --socket=wayland
+  - --socket=fallback-x11
   - --socket=pulseaudio
+  - --socket=session-bus
   - --device=dri
-  - --filesystem=home:ro
-  - --filesystem=host:ro
-  - --filesystem=xdg-run/gvfs:ro
+  - --filesystem=home
+  - --filesystem=xdg-run/gvfs
   - --talk-name=org.freedesktop.Notifications
   - --talk-name=org.freedesktop.portal.Desktop
+
+build-options:
+  append-path: /usr/lib/sdk/node24/bin
+  env:
+    NPM_CONFIG_LOGLEVEL: info
 
 modules:
   - name: novabeats
     buildsystem: simple
 
+    build-options:
+      env:
+        XDG_CACHE_HOME: /run/build/novabeats/flatpak-node/cache
+        npm_config_cache: /run/build/novabeats/flatpak-node/npm-cache
+        npm_config_offline: "false"
+
     build-commands:
-      - /usr/bin/install -d /app/nova
-      - /usr/bin/cp -r src /app/nova/src
-      - /usr/bin/cp -r build /app/nova/build
-      - /usr/bin/cp package.json /app/nova/package.json
-      - if [ -d node_modules ]; then /usr/bin/cp -r node_modules /app/nova/node_modules; else /usr/lib/sdk/node20/bin/npm install --prefix /app/nova --omit=dev --ignore-scripts --no-audit --no-fund; fi
-      - /usr/bin/chmod +x /app/nova/node_modules/electron/dist/electron /app/nova/node_modules/electron/dist/chrome-sandbox
-
-      - /usr/bin/install -Dm755 run.sh /app/bin/run.sh
-
-      - /usr/bin/install -Dm644 io.github.alejandroelias.NovaBeats.desktop \
-        /app/share/applications/io.github.alejandroelias.NovaBeats.desktop
-
-      - /usr/bin/install -Dm644 io.github.alejandroelias.NovaBeats.metainfo.xml \
-        /app/share/metainfo/io.github.alejandroelias.NovaBeats.metainfo.xml
-
-      - /usr/bin/install -Dm644 build/icon.png \
-        /app/share/icons/hicolor/512x512/apps/io.github.alejandroelias.NovaBeats.png
+      - npm install
+      - npm run build -- --linux --dir
+      - cp -a dist/linux*unpacked /app/main
+      - install -Dm755 run.sh /app/bin/run.sh
+      - install -Dm644 io.github.alejandroelias.NovaBeats.desktop /app/share/applications/io.github.alejandroelias.NovaBeats.desktop
+      - install -Dm644 io.github.alejandroelias.NovaBeats.metainfo.xml /app/share/metainfo/io.github.alejandroelias.NovaBeats.metainfo.xml
+      - install -Dm644 build/icon.png /app/share/icons/hicolor/512x512/apps/io.github.alejandroelias.NovaBeats.png
 
     sources:
       - type: dir
