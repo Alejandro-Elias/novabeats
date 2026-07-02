@@ -3,15 +3,15 @@
   <id>io.github.alejandroelias.NovaBeats</id>
 
   <name>NovaBeats</name>
-  <summary>Reproductor de música local para Linux y Windows</summary>
+  <summary>Reproductor de música local y offline para Linux</summary>
 
   <description>
     <p>
       NovaBeats es un reproductor de música local desarrollado con Electron.
-      Permite organizar y reproducir tu biblioteca de audio de forma simple y rápida.
+      Permite organizar y reproducir tu biblioteca de audio de forma simple y rápida sin depender de servicios en línea.
     </p>
     <p>
-      Soporta archivos locales y está diseñado para ser ligero y fácil de usar.
+      Puede cargar archivos y carpetas desde tu partición principal, particiones montadas y otros directorios locales del sistema.
     </p>
   </description>
 
