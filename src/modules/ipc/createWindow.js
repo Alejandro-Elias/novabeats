@@ -4,6 +4,9 @@ const path = require("path");
 let win = null;
 
 const createWindow = () => {
+  const iconPath = path.resolve(__dirname, "../../../build/icon.png");
+  const indexPath = path.resolve(__dirname, "../../index.html");
+
   win = new BrowserWindow({
     width: 1300,
     height: 350,
@@ -13,7 +16,7 @@ const createWindow = () => {
     autoHideMenuBar: false,
     frame: false,
     transparent: true,
-    icon: path.join(__dirname, "build", "icon.png"),
+    icon: iconPath,
     webPreferences: {
       preload: path.join(__dirname, "../preload.js"),
     },
@@ -41,7 +44,7 @@ const createWindow = () => {
     win.setResizable(true);
 
     if (isCompact) {
-      win.setSize(1300, 100);      
+      win.setSize(1300, 100);
     } else {
       win.setSize(1300, 392);
     }
@@ -56,8 +59,7 @@ const createWindow = () => {
     win.minimize();
   });
 
-  win.loadFile("./src/index.html");
-  
+  win.loadFile(indexPath);
 };
 
 module.exports = createWindow;
